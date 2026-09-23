@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>𝐕𝐎𝐈𝐃𝐋𝐄𝐒𝐒 ⚡🌌</title>
     <meta name="description" content="𝐕𝐎𝐈𝐃𝐋𝐄𝐒𝐒 ⚡🌌 — Hyper-Void Underground Engine">
     <meta property="og:image" content="https://i.imgur.com/Zvo9Wc0.jpeg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@300;400;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/image/home.png">
 </head>
@@ -37,68 +38,18 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="/">
-        <img src="/image/home.png" alt="Home">
         <span class="voidless-brand">𝐕𝐎𝐈𝐃𝐋𝐄𝐒𝐒</span>
     </a>
 
-    <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="margin-right: 70px;">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">
-                    Home
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-
-            <li class="nav-item dropdown">
-                <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false">
-                    Features
-                </a>
-
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/step_by_step_guide">
-                        Step-by-Step Guide
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="https://zark-spam-share.onrender.com/">
-                        SpamShare-Tools
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="https://my-portfolio-f9lz.onrender.com/">
-                        Developer
-                    </a>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="online_user">
-                    Active
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="tos-privacy-policy">
-                    Terms and Conditions
-                </a>
-            </li>
+            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="online_user">Active</a></li>
+            <li class="nav-item"><a class="nav-link" href="tos-privacy-policy">Terms and Conditions</a></li>
         </ul>
     </div>
 </nav>
@@ -106,252 +57,100 @@
 <!-- MAIN -->
 <main>
     <div class="container hero-container text-center">
-        <div class="brand-symbol">
-            ⚡
-        </div>
-
-        <h1 class="voidless-brand">
-            𝐕𝐎𝐈𝐃𝐋𝐄𝐒𝐒
-        </h1>
-
-        <div class="voidless-subtitle">
-            🌌 HYPER-VOID // UNDERGROUND ENGINE 🌌
-        </div>
-
-        <div class="version" style="color: #a855f7; margin-top: 5px; font-weight: bold;">
-            VERSION 2.0.0 (VOID EDITION)
-        </div>
+        <div class="brand-symbol" style="font-size: 30px;">⚡</div>
+        <h1 class="voidless-brand">𝐕𝐎𝐈𝐃𝐋𝐄𝐒𝐒</h1>
+        <div class="voidless-subtitle">🌌 HYPER-VOID // UNDERGROUND ENGINE 🌌</div>
+        <div class="version" style="color: #a855f7; margin-top: 5px; font-weight: bold;">VERSION 2.0.0 (VOID EDITION)</div>
     </div>
 
     <!-- COOKIE -->
     <div class="container glass-card">
-        <div class="section-number">
-            [ 01 ]
-        </div>
-
-        <h2>
-            <i class="fa-solid fa-cookie-bite"></i>
-            SESSION COOKIE
-        </h2>
-
+        <div class="section-number">[ 01 ]</div>
+        <h2><i class="fa-solid fa-cookie-bite"></i> SESSION COOKIE</h2>
         <form id="json-form">
-            <div class="row">
-                <div class="col-md-12">
-                    <textarea
-                        id="json-data"
-                        class="form-control centered-textarea center-placeholder"
-                        placeholder="Inject your session cookie here..."></textarea>
-                </div>
-            </div>
+            <textarea id="json-data" class="form-control centered-textarea" placeholder="Inject your session cookie here..."></textarea>
         </form>
-
-        <p class="description">
-            Welcome to the void. Feed the engine with your cookie to initiate power.
-            Configure the parameters below.
-        </p>
+        <p class="description mt-2" style="color: #bbb;">Welcome to the void. Feed the engine with your cookie to initiate power.</p>
     </div>
 
     <!-- COMMANDS -->
     <div class="container glass-card" id="listOfCommands">
-        <div class="section-number">
-            [ 02 ]
-        </div>
-
-        <h2>
-            <i class="fa-solid fa-terminal"></i>
-            COMMAND PROTOCOLS
-        </h2>
-
-        <p>
-            Engage core command modules by clicking below.
-        </p>
-
-        <button
-            class="btn btn-primary sleep-button"
-            onclick="selectAllCommands(); scrollToSection('listOfCommandsEvent');">
-            <i class="fa-solid fa-list-check"></i>
-            EXECUTE ALL COMMANDS
+        <div class="section-number">[ 02 ]</div>
+        <h2><i class="fa-solid fa-terminal"></i> COMMAND PROTOCOLS</h2>
+        <p style="color: #bbb;">Engage core command modules by clicking below.</p>
+        <button class="btn btn-primary" onclick="selectAllCommands(); scrollToSection('listOfCommandsEvent');">
+            <i class="fa-solid fa-list-check"></i> EXECUTE ALL COMMANDS
         </button>
     </div>
 
     <!-- EVENTS -->
     <div class="container glass-card" id="listOfCommandsEvent">
-        <div class="section-number">
-            [ 03 ]
-        </div>
-
-        <h2>
-            <i class="fa-solid fa-bolt"></i>
-            EVENT TRIGGERS
-        </h2>
-
-        <p>
-            Engage void event routines by tapping below.
-        </p>
-
-        <button
-            class="btn btn-primary sleep-button"
-            onclick="selectAllEvents(); scrollToSection('prefixOfCommands');">
-            <i class="fa-solid fa-bolt"></i>
-            EXECUTE ALL EVENTS
+        <div class="section-number">[ 03 ]</div>
+        <h2><i class="fa-solid fa-bolt"></i> EVENT TRIGGERS</h2>
+        <p style="color: #bbb;">Engage void event routines by tapping below.</p>
+        <button class="btn btn-primary" onclick="selectAllEvents(); scrollToSection('prefixOfCommands');">
+            <i class="fa-solid fa-bolt"></i> EXECUTE ALL EVENTS
         </button>
     </div>
 
     <!-- PREFIX -->
     <div class="container glass-card" id="prefixOfCommands">
-        <div class="section-number">
-            [ 04 ]
-        </div>
-
-        <h2>
-            <i class="fa-solid fa-slash"></i>
-            COMMAND PREFIX
-        </h2>
-
-        <p>
-            Set the trigger prefix. For default access, use <strong>non-prefix</strong>.
-        </p>
-
-        <input
-            type="text"
-            id="inputOfPrefix"
-            placeholder="@, #, /, *, .">
+        <div class="section-number">[ 04 ]</div>
+        <h2><i class="fa-solid fa-slash"></i> COMMAND PREFIX</h2>
+        <p style="color: #bbb;">Set the trigger prefix. For default access, use <strong>non-prefix</strong>.</p>
+        <input type="text" id="inputOfPrefix" placeholder="@, #, /, *, .">
     </div>
 
     <!-- ADMIN -->
     <div class="container glass-card" id="adminOfCommands">
-        <div class="section-number">
-            [ 05 ]
-        </div>
-
-        <h2>
-            <i class="fa-solid fa-user-shield"></i>
-            OVERLORD UID
-        </h2>
-
-        <p>
-            Provide Master UID. For open access, use <strong>default</strong>.
-        </p>
-
-        <input
-            type="text"
-            id="inputOfAdmin"
-            placeholder="Admin userID">
+        <div class="section-number">[ 05 ]</div>
+        <h2><i class="fa-solid fa-user-shield"></i> OVERLORD UID</h2>
+        <p style="color: #bbb;">Provide Master UID. For open access, use <strong>default</strong>.</p>
+        <input type="text" id="inputOfAdmin" placeholder="Admin userID">
     </div>
 
     <!-- TERMS -->
     <div class="text-center my-3">
-        <label class="agreement">
-            <input
-                type="checkbox"
-                id="agreeCheckbox">
-            <span>
-                I accept the terms of entering the Void Protocols.
-            </span>
+        <label class="agreement" style="color: #ddd;">
+            <input type="checkbox" id="agreeCheckbox">
+            <span>I accept the terms of entering the Void Protocols.</span>
         </label>
     </div>
 
     <!-- SUBMIT -->
     <div class="col text-center submit-container">
-        <button
-            class="btn btn-primary sleep-button submit-button"
-            onclick="State()"
-            disabled
-            id="submitButton">
-            <i class="fa-solid fa-bolt"></i>
-            INITIALIZE VOID ENGINE
+        <button class="btn btn-primary submit-button" onclick="State()" id="submitButton">
+            <i class="fa-solid fa-bolt"></i> INITIALIZE VOID ENGINE
         </button>
     </div>
 
     <!-- RESULT -->
-    <div
-        id="result"
-        class="container text-center result-box"
-        style="display: none;">
-    </div>
+    <div id="result" class="container text-center result-box" style="display: none;"></div>
 </main>
 
 <!-- FOOTER -->
 <footer>
-    <button id="scrollUpBtn">
-        <i class="fa-solid fa-angles-up"></i>
-    </button>
-
     <div class="footer">
-        <div class="footer-logo voidless-brand">
-            𝐕𝐎𝐈𝐃𝐋𝐄𝐒𝐒 
-        </div>
-
-        <p>
-            © 2026 VOIDLESS ENGINE | Crafted in the deep dark void by sinzu
-        </p>
-
-        <p>
-            <span>
-                <i class="fa-regular fa-clock"></i>
-                Time:
-                <span id="time"></span>
-            </span>
-
-            <span class="footer-divider">|</span>
-
-            <span>
-                <i class="fa-solid fa-signal"></i>
-                Ping:
-                <span id="ping"></span>
-            </span>
-        </p>
+        <div class="footer-logo voidless-brand">𝐕𝐎𝐈𝐃𝐋𝐄𝐒𝐒 ⚡</div>
+        <p>© 2026 VOIDLESS ENGINE | Crafted in the deep dark void by sinzu</p>
     </div>
 </footer>
 
-<!-- EXISTING FUNCTIONALITY -->
+<!-- SCRIPTS -->
 <script>
     function scrollToSection(sectionId) {
         const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
     }
-
-    function selectAllCommands() {
-        scrollToSection('listOfCommandsEvent');
-    }
-
-    function selectAllEvents() {
-        scrollToSection('prefixOfCommands');
-    }
+    function selectAllCommands() { scrollToSection('listOfCommandsEvent'); }
+    function selectAllEvents() { scrollToSection('prefixOfCommands'); }
 </script>
 
-<!-- DO NOT REMOVE -->
 <script src="script.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
-
-<!-- BACKGROUND MUSIC -->
-<script>
-    let tracks = [
-        "https://raw.githubusercontent.com/Kaizenji/Kaizenji/main/cute-depressed.mp3"
-    ];
-
-    let randomTrack = tracks[Math.floor(Math.random() * tracks.length)];
-
-    let sound = new Howl({
-        src: [randomTrack],
-        autoplay: true,
-        loop: false,
-        format: ["mp3"],
-        volume: 2.0,
-        onend: () => {}
-    });
-
-    sound.play();
-</script>
 
 </body>
 </html>
