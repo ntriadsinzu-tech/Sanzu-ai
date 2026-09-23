@@ -1,1090 +1,374 @@
 /* =========================================================
-   𝐒𝐋𝐄𝐄𝐏𝐈𝐍𝟒𝐋𝐆𝐍𝐆💤💫
-   DARK UNDERGROUND + 💤 METEOR SHOWER
+   🌌 𝐕𝐎𝐈𝐃𝐋𝐄𝐒𝐒 🌌
+   HYPER-VOID UNDERGROUND + ETHER METEOR SHOWER
    ========================================================= */
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
     scroll-behavior: smooth;
+    background-color: #020104;
 }
 
 body {
     min-height: 100vh;
     position: relative;
     padding: 20px;
-
     background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(120, 90, 145, 0.18),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 100% 100%,
-            rgba(70, 70, 90, 0.12),
-            transparent 35%
-        ),
-        #080808;
-
+        radial-gradient(circle at 50% -10%, rgba(138, 43, 226, 0.35), transparent 45%),
+        radial-gradient(circle at 0% 100%, rgba(75, 0, 130, 0.3), transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(0, 212, 255, 0.2), transparent 40%),
+        #030106;
     font-family: 'Courier Prime', 'Courier New', monospace;
-    color: #fff;
-
+    color: #f0f0f0;
     opacity: 0;
-    animation: fadeInContent 1.2s forwards ease-in-out;
-
+    animation: fadeInContent 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     overflow-x: hidden;
 }
 
 /* =========================================================
-   BACKGROUND
+   VOIDLESS ATMOSPHERE
    ========================================================= */
 
 body::before {
     content: '';
-
     position: fixed;
     inset: 0;
-
-    width: 100%;
-    height: 100%;
-
+    width: 100vw;
+    height: 100vh;
     background-image:
-        linear-gradient(
-            rgba(5, 5, 5, 0.78),
-            rgba(8, 8, 8, 0.90)
-        ),
+        linear-gradient(180deg, rgba(3, 1, 6, 0.88) 0%, rgba(8, 2, 12, 0.96) 100%),
         url('https://i.gifer.com/2YcW.gif');
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     z-index: -3;
-
-    opacity: 0;
-    animation: fadeInBackground 1.8s forwards ease-in-out;
+    filter: saturate(180%) contrast(130%) hue-rotate(240deg);
+    animation: fadeInBackground 1.2s forwards ease-in-out;
 }
 
-/* Dark atmosphere */
+/* Void Scanlines Vignette */
 body::after {
     content: '';
-
     position: fixed;
     inset: 0;
-
     pointer-events: none;
-
     background:
-        radial-gradient(
-            circle at center,
-            transparent 15%,
-            rgba(0, 0, 0, 0.65) 100%
-        );
-
+        linear-gradient(rgba(10, 0, 20, 0) 50%, rgba(0, 0, 0, 0.35) 50%),
+        radial-gradient(circle at center, transparent 15%, rgba(4, 1, 8, 0.92) 100%);
+    background-size: 100% 4px, 100% 100%;
     z-index: -2;
 }
 
 /* =========================================================
-   💤 METEOR SHOWER
+   🌌 VOIDLESS METEOR SHOWER
    ========================================================= */
 
-.sleepin-meteors {
+.voidless-meteors {
     position: fixed;
-
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     overflow: hidden;
-
     pointer-events: none;
-
     z-index: 1;
 }
 
-/* Individual meteor */
-.sleepin-meteors span {
+/* Individual Void Meteor */
+.voidless-meteors span {
     position: absolute;
-
-    top: -80px;
+    top: -100px;
     left: var(--x);
-
-    width: 4px;
-    height: 4px;
-
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-
     background: #fff;
-
     opacity: 0;
-
-    transform: rotate(35deg);
-
+    transform: rotate(40deg);
     filter:
-        drop-shadow(0 0 4px #fff)
-        drop-shadow(0 0 10px rgba(190, 165, 220, 0.8));
-
-    animation:
-        sleepinMeteor
-        var(--duration)
-        linear
-        var(--delay)
-        infinite;
+        drop-shadow(0 0 8px #fff)
+        drop-shadow(0 0 15px #a855f7)
+        drop-shadow(0 0 25px #00d4ff);
+    animation: voidlessMeteor var(--duration) linear var(--delay) infinite;
 }
 
-/* Meteor tail */
-.sleepin-meteors span::after {
+/* Ether Meteor Tail */
+.voidless-meteors span::after {
     content: '';
-
     position: absolute;
-
-    top: 1px;
+    top: 50%;
     right: 2px;
-
     width: var(--tail);
-    height: 2px;
-
+    height: 3px;
     border-radius: 999px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(190, 165, 220, 0.15),
-            rgba(255, 255, 255, 0.9)
-        );
-
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.6), rgba(0, 212, 255, 0.9), #fff);
     transform-origin: right center;
-
-    transform: translateX(2px);
+    transform: translateY(-50%) translateX(2px);
 }
 
-/* 💤 symbol attached to some meteors */
-.sleepin-meteors span.sleep-symbol {
+/* Void Symbol Meteors */
+.voidless-meteors span.void-symbol {
     width: auto;
     height: auto;
-
     background: transparent;
-
-    font-size: 18px;
-
+    font-size: 22px;
     filter:
-        drop-shadow(0 0 5px rgba(255,255,255,.8))
-        drop-shadow(0 0 12px rgba(170,140,200,.7));
+        drop-shadow(0 0 8px #fff)
+        drop-shadow(0 0 18px rgba(168, 85, 247, 0.9))
+        drop-shadow(0 0 30px rgba(0, 212, 255, 0.9));
+    animation: voidlessMeteor var(--duration) linear var(--delay) infinite, voidGlitch 1.5s ease-in-out infinite alternate;
 }
 
-.sleepin-meteors span.sleep-symbol::before {
-    content: '💤';
+.voidless-meteors span.void-symbol::before {
+    content: '⚡';
 }
 
-/* Meteor movement */
-@keyframes sleepinMeteor {
-
+/* Void Physics */
+@keyframes voidlessMeteor {
     0% {
         opacity: 0;
-
-        transform:
-            translate3d(0, 0, 0)
-            rotate(35deg)
-            scale(.7);
+        transform: translate3d(0, 0, 0) rotate(40deg) scale(0.6);
     }
-
-    8% {
-        opacity: .95;
+    10% {
+        opacity: 1;
     }
-
-    35% {
-        opacity: .8;
+    50% {
+        opacity: 0.9;
     }
-
-    70% {
-        opacity: .45;
+    85% {
+        opacity: 0.4;
     }
-
     100% {
         opacity: 0;
-
-        transform:
-            translate3d(55vw, 105vh, 0)
-            rotate(35deg)
-            scale(1);
+        transform: translate3d(70vw, 120vh, 0) rotate(40deg) scale(1.3);
     }
+}
+
+@keyframes voidGlitch {
+    0% { transform: rotate(40deg) translateY(0); }
+    100% { transform: rotate(45deg) translateY(-6px); }
 }
 
 /* =========================================================
-   CONTENT ABOVE METEORS
+   CONTAINER & UI CARD (VOID ENGINE)
    ========================================================= */
 
-.navbar,
-.container,
-.footer,
-#scrollUpBtn {
+.navbar, .container, .footer, #scrollUpBtn {
     position: relative;
     z-index: 2;
 }
 
-/* =========================================================
-   ANIMATIONS
-   ========================================================= */
-
-@keyframes fadeInContent {
-
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInBackground {
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes sleepinGlow {
-
-    0%,
-    100% {
-        box-shadow:
-            0 0 8px rgba(155, 110, 190, 0.08),
-            0 10px 30px rgba(0, 0, 0, 0.45);
-    }
-
-    50% {
-        box-shadow:
-            0 0 18px rgba(155, 110, 190, 0.16),
-            0 10px 30px rgba(0, 0, 0, 0.55);
-    }
-}
-
-/* =========================================================
-   CONTAINER
-   ========================================================= */
-
 .container {
-
     position: relative;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(25, 25, 25, 0.94),
-            rgba(10, 10, 10, 0.94)
-        );
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
-
-    border-radius: 14px;
-
+    background: linear-gradient(135deg, rgba(15, 5, 25, 0.92), rgba(4, 1, 8, 0.96));
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: 16px;
     box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.55),
-        inset 0 1px 0 rgba(255, 255, 255, 0.03);
-
-    padding: 24px;
-
-    margin-top: 20px;
-    margin-bottom: 10px;
-
-    animation:
-        sleepinGlow
-        5s
-        ease-in-out
-        infinite;
-
-    backdrop-filter: blur(8px);
+        0 15px 40px rgba(0, 0, 0, 0.95),
+        0 0 30px rgba(138, 43, 226, 0.25),
+        inset 0 0 15px rgba(0, 212, 255, 0.1);
+    padding: 28px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    animation: voidGlow 3.5s infinite alternate ease-in-out;
+    backdrop-filter: blur(12px);
 }
 
-/* Top light */
+/* Top Ether Arc */
 .container::before {
-
     content: '';
-
     position: absolute;
+    top: -1px;
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a855f7, #00d4ff, #a855f7, transparent);
+    box-shadow: 0 0 12px #a855f7, 0 0 20px #00d4ff;
+}
 
-    top: 0;
-    left: 12%;
-    right: 12%;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(180, 150, 210, 0.5),
-            transparent
-        );
+@keyframes voidGlow {
+    0% {
+        border-color: rgba(168, 85, 247, 0.3);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 20px rgba(138, 43, 226, 0.2);
+    }
+    100% {
+        border-color: rgba(0, 212, 255, 0.6);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 1), 0 0 35px rgba(0, 212, 255, 0.4);
+    }
 }
 
 /* =========================================================
-   HEADINGS
+   HEADINGS & BRANDING
    ========================================================= */
 
-h1 {
-
-    color: #f5f5f5;
-
-    letter-spacing: 1px;
-
-    text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.12);
-}
-
-.container h1 {
-
-    position: relative;
-
-    display: inline-block;
-
-    padding: 12px 20px;
-
-    margin-bottom: 20px;
-
-    color: #f4f4f4;
-
-    background:
-        linear-gradient(
-            145deg,
-            #202020,
-            #111111
-        );
-
-    border:
-        1px solid rgba(255, 255, 255, 0.08);
-
-    border-radius: 10px;
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.45),
-        inset 0 1px 0 rgba(255, 255, 255, 0.04);
-
-    letter-spacing: 1px;
-}
-
-/* =========================================================
-   TEXT
-   ========================================================= */
-
-label {
-    color: #bcbcbc;
-}
-
-.container p {
-
-    line-height: 1.7;
-
-    color: #cfcfcf;
-}
-
-.container ul {
-
-    padding-left: 20px;
-}
-
-.container ul li {
-
-    list-style: none;
-
-    color: #cfcfcf;
-}
-
-.container ul li::before {
-
-    content: '›';
-
-    color: #a889bd;
-
-    font-weight: bold;
-
-    display: inline-block;
-
-    width: 1em;
-
-    margin-left: -1em;
-
-    text-shadow:
-        0 0 8px rgba(168, 137, 189, 0.5);
-}
-
-.container ul li + li {
-
-    margin-top: 10px;
-}
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-
-.navbar {
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(25, 25, 25, 0.96),
-            rgba(12, 12, 12, 0.96)
-        );
-
+.voidless-brand {
     color: #fff;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.07);
-
-    border-radius: 12px;
-
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.45);
-}
-
-.navbar a {
-
-    color: #e8e8e8;
-
-    transition: 0.25s ease;
-}
-
-.navbar a:hover {
-
-    color: #b99aca;
-
+    font-weight: 900;
+    letter-spacing: 4px;
     text-shadow:
-        0 0 8px rgba(185, 154, 202, 0.35);
+        0 0 10px rgba(168, 85, 247, 0.8),
+        0 0 20px rgba(0, 212, 255, 0.6);
 }
 
-.navbar-brand {
-
-    color: #fff !important;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-}
-
-.navbar-toggler-icon {
-
-    background-color: #1a1a1a;
-
-    border-radius: 5px;
-}
-
-/* =========================================================
-   DROPDOWN
-   ========================================================= */
-
-.dropdown-menu {
-
-    background: #151515;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.08);
-
-    border-radius: 10px;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.55);
-}
-
-.dropdown-menu a {
-
-    color: #ddd !important;
-}
-
-.dropdown-menu a:hover {
-
-    background: #222;
-
-    color: #c29bd8 !important;
-}
-
-/* =========================================================
-   TEXTAREA
-   ========================================================= */
-
-.centered-textarea {
-
-    display: block;
-
-    margin: 0 auto;
-
-    width: 100%;
-
-    min-height: 150px;
-
-    padding: 12px;
-
-    border:
-        1px solid #383838;
-
-    border-radius: 10px;
-
-    resize: none;
-
-    color: #eee;
-
-    background:
-        linear-gradient(
-            145deg,
-            #151515,
-            #0e0e0e
-        );
-
-    outline: none;
-
-    transition:
-        border-color .25s ease,
-        box-shadow .25s ease;
-}
-
-.centered-textarea:focus {
-
-    border-color: #8e6da0;
-
-    box-shadow:
-        0 0 0 2px rgba(142, 109, 160, 0.08),
-        0 0 18px rgba(142, 109, 160, 0.12);
-}
-
-.center-placeholder::placeholder {
-
-    text-align: center;
-
-    color: #777;
-}
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
-.btn-primary {
-
-    background:
-        linear-gradient(
-            135deg,
-            #292929,
-            #151515
-        );
-
-    border:
-        1px solid #555;
-
-    border-radius: 10px;
-
-    font-size: 14px;
-
-    color: #fff;
-
-    padding: 9px 18px;
-
-    transition: .25s ease;
-}
-
-.btn-primary:hover {
-
-    background:
-        linear-gradient(
-            135deg,
-            #393039,
-            #191919
-        );
-
-    border-color: #a889bd;
-
-    color: #fff;
-
-    box-shadow:
-        0 0 15px rgba(168, 137, 189, 0.16);
-
-    transform: translateY(-1px);
-}
-
-.btn-primary:active {
-
-    transform: translateY(0);
-}
-
-/* =========================================================
-   SUCCESS
-   ========================================================= */
-
-.success-message {
-
-    color: #a8d5b0;
-
-    margin-top: 10px;
-
-    font-size: 12px;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.footer {
-
-    padding: 14px 20px;
-
-    text-align: center;
-
-    font-size: 12px;
-
-    color: #777;
-
-    background:
-        rgba(15, 15, 15, 0.92);
-
-    width: 115%;
-
-    margin-left: -30px;
-
-    margin-bottom: -20px;
-
-    border-top:
-        1px solid rgba(255, 255, 255, 0.06);
-}
-
-.footer p {
-
-    margin: 5px 0;
-}
-
-.footer a {
-
-    color: #777;
-
-    text-decoration: none;
-
-    transition:
-        color .3s ease,
-        text-shadow .3s ease;
-}
-
-.footer a:hover {
-
-    color: #c0a4cc;
-
-    text-shadow:
-        0 0 8px rgba(192, 164, 204, 0.3);
-}
-
-/* =========================================================
-   BUTTON CONTAINER
-   ========================================================= */
-
-.container-buttons {
-
-    margin-top: 20px;
-
-    text-align: center;
-}
-
-.container-buttons .btn {
-
-    margin: 5px;
-}
-
-/* =========================================================
-   RESULT
-   ========================================================= */
-
-#result {
-
-    padding: 10px;
-
-    margin-top: 20px;
-
-    border-radius: 10px;
-
-    font-size: 10px;
-
-    color: #ddd;
-
-    background:
-        rgba(20, 20, 20, 0.85);
-
-    border:
-        1px solid rgba(255, 255, 255, 0.06);
-}
-
-/* =========================================================
-   SWEETALERT
-   ========================================================= */
-
-.custom-swal {
-
-    background:
-        linear-gradient(
-            145deg,
-            #1d1d1d,
-            #101010
-        );
-
-    color: #fff;
-
-    font-size: 14px;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.08);
-
-    border-radius: 12px;
-
-    box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.65);
-}
-
-/* =========================================================
-   FORM CHECK
-   ========================================================= */
-
-.form-check {
-
-    display: flex;
-
-    margin-top: 10px;
-
-    padding: 10px;
-
-    width: 90%;
-
-    align-items: center;
-
-    border:
-        1px solid #333;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    transition:
-        background-color .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
-
-    background-color: #151515;
-
-    font-size: 15px;
-
-    color: #ddd;
-}
-
-.form-check:hover {
-
-    background-color: #1c1c1c;
-
-    border-color: #66546f;
-
-    box-shadow:
-        0 0 12px rgba(140, 105, 155, 0.08);
-}
-
-.form-check-input {
-
-    margin-right: 10px;
-
-    opacity: 0;
-}
-
-/* =========================================================
-   PREFIX / ADMIN
-   ========================================================= */
-
-#inputOfPrefix,
-#inputOfAdmin {
-
-    padding: 10px;
-
-    width: 90%;
-
-    border:
-        1px solid #383838;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    transition:
-        background-color .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
-
-    background-color: #151515;
-
-    color: #fff;
-
-    font-size: 15px;
-
-    outline: none;
-}
-
-#inputOfPrefix:focus,
-#inputOfAdmin:focus {
-
-    border-color: #91739e;
-
-    box-shadow:
-        0 0 12px rgba(145, 115, 158, 0.12);
-}
-
-/* =========================================================
-   JSON DATA
-   ========================================================= */
-
-#json-data {
-
-    background:
-        linear-gradient(
-            rgba(5, 5, 5, 0.82),
-            rgba(5, 5, 5, 0.92)
-        ),
-        url('https://i.gifer.com/YQgT.gif');
-
-    background-size: cover;
-
-    background-position: center;
-
-    color: #ddd;
-
-    background-repeat: no-repeat;
-
-    border-radius: 10px;
-}
-
-/* =========================================================
-   COMMAND LIST
-   ========================================================= */
-
-#listOfCommands,
-#listOfCommandsEvent,
-#prefixOfCommands,
-#adminOfCommands {
-
-    border: none !important;
-}
-
-#listOfCommands:not(.modal),
-#listOfCommandsEvent:not(.modal),
-#prefixOfCommands:not(.modal),
-#adminOfCommands:not(.modal) {
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.45);
-}
-
-/* =========================================================
-   DISABLE
-   ========================================================= */
-
-.disable {
-
-    display: none !important;
-}
-
-/* =========================================================
-   SCROLL UP
-   ========================================================= */
-
-#scrollUpBtn {
-
-    position: fixed;
-
-    margin-bottom: 70px;
-
-    right: 20px;
-
-    padding: 13px 22px;
-
-    font-size: 14px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #292929,
-            #121212
-        );
-
-    color: white;
-
-    border:
-        1px solid #444;
-
-    border-radius: 10px;
-
-    cursor: pointer;
-
-    display: none;
-
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.45);
-
-    transition: .25s ease;
-}
-
-#scrollUpBtn:hover {
-
-    border-color: #9d7bab;
-
-    box-shadow:
-        0 0 16px rgba(157, 123, 171, 0.2);
-
-    transform: translateY(-2px);
-}
-
-/* =========================================================
-   SLEEPIN BRAND
-   ========================================================= */
-
-.sleepin-brand {
-
-    color: #eee;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.15),
-        0 0 18px rgba(145, 105, 165, 0.12);
-}
-
-.sleepin-subtitle {
-
-    color: #888;
-
+.voidless-subtitle {
+    color: #38bdf8;
     font-size: 11px;
-
-    letter-spacing: 3px;
-
+    letter-spacing: 5px;
     text-transform: uppercase;
 }
 
-/* =========================================================
-   SELECTION
-   ========================================================= */
-
-::selection {
-
-    background:
-        rgba(150, 115, 170, 0.35);
-
+h1, .container h1 {
+    position: relative;
+    display: inline-block;
+    padding: 14px 24px;
+    margin-bottom: 22px;
     color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #1e052d, #07010f);
+    border: 1px solid rgba(168, 85, 247, 0.5);
+    border-radius: 10px;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.8),
+        inset 0 0 10px rgba(168, 85, 247, 0.3);
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.8), 0 0 20px rgba(0, 212, 255, 0.6);
+}
+
+.container p, label {
+    color: #d1d5db;
+    line-height: 1.7;
+}
+
+.container ul li {
+    list-style: none;
+    color: #e5e7eb;
+    margin-top: 10px;
+}
+
+.container ul li::before {
+    content: '⚡';
+    color: #a855f7;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 8px;
+    text-shadow: 0 0 10px #a855f7;
 }
 
 /* =========================================================
-   SCROLLBAR
+   INPUTS & TEXTAREAS (VOID STYLE)
    ========================================================= */
 
-::-webkit-scrollbar {
-
-    width: 7px;
-}
-
-::-webkit-scrollbar-track {
-
-    background: #080808;
-}
-
-::-webkit-scrollbar-thumb {
-
-    background: #333;
-
+.centered-textarea, #inputOfPrefix, #inputOfAdmin {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #2e1065;
     border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(145deg, #0b0214, #030006);
+    outline: none;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.9);
 }
 
-::-webkit-scrollbar-thumb:hover {
-
-    background: #695374;
+.centered-textarea:focus, #inputOfPrefix:focus, #inputOfAdmin:focus {
+    border-color: #00d4ff;
+    box-shadow:
+        0 0 15px rgba(0, 212, 255, 0.4),
+        inset 0 0 8px rgba(168, 85, 247, 0.3);
+    transform: translateY(-1px);
 }
 
 /* =========================================================
-   MOBILE
+   BUTTONS (ETHER NEON)
+   ========================================================= */
+
+.btn-primary {
+    background: linear-gradient(135deg, #3b0764, #07010f);
+    border: 1px solid #a855f7;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #581c87, #0f021e);
+    border-color: #00d4ff;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 30px rgba(168, 85, 247, 0.5);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.btn-primary:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* =========================================================
+   FOOTER & SCROLL UP
+   ========================================================= */
+
+.footer {
+    padding: 18px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #9ca3af;
+    background: rgba(4, 1, 8, 0.96);
+    border-top: 1px solid rgba(168, 85, 247, 0.25);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.9);
+}
+
+.footer a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: #00d4ff;
+    text-shadow: 0 0 10px #00d4ff;
+}
+
+#scrollUpBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #3b0764, #040108);
+    color: #fff;
+    border: 1px solid #a855f7;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.8);
+    transition: all 0.3s ease;
+}
+
+#scrollUpBtn:hover {
+    border-color: #00d4ff;
+    box-shadow: 0 0 20px #00d4ff;
+    transform: translateY(-4px);
+}
+
+/* =========================================================
+   RESPONSIVE (MOBILE OPTIMIZATION)
    ========================================================= */
 
 @media (max-width: 768px) {
-
-    body {
-        padding: 12px;
-    }
-
-    .container {
-
-        padding: 18px;
-
-        margin-top: 15px;
-
-        border-radius: 12px;
-    }
-
-    .container h1 {
-
-        font-size: 18px;
-
-        padding: 10px 15px;
-    }
-
-    .form-check,
-    #inputOfPrefix,
-    #inputOfAdmin {
-
-        width: 100%;
-    }
-
-    .footer {
-
-        width: 100%;
-
-        margin-left: 0;
-
-        margin-bottom: -18px;
-    }
-
-    #scrollUpBtn {
-
-        right: 15px;
-
-        padding: 11px 18px;
-
-        font-size: 12px;
-    }
-
-    .sleepin-meteors span {
-
-        animation-duration: 5s;
-    }
+    body { padding: 10px; }
+    .container { padding: 18px; margin-top: 10px; }
+    h1, .container h1 { font-size: 16px; padding: 10px 14px; }
+    .voidless-meteors span { animation-duration: 4s; }
 }
-
-Important: Para lumabas yung actual na "💤" meteors, idagdag din ito bago "</body>" ng HTML mo:
-
-<div class="sleepin-meteors">
-    <span style="--x:5%;--duration:4s;--delay:0s;--tail:55px"></span>
-    <span style="--x:15%;--duration:6s;--delay:2s;--tail:70px"></span>
-    <span style="--x:28%;--duration:5s;--delay:1s;--tail:45px"></span>
-    <span style="--x:40%;--duration:7s;--delay:4s;--tail:80px"></span>
-    <span style="--x:53%;--duration:4.5s;--delay:3s;--tail:60px"></span>
-    <span style="--x:67%;--duration:6s;--delay:.5s;--tail:75px"></span>
-    <span style="--x:78%;--duration:5s;--delay:2.5s;--tail:50px"></span>
-    <span style="--x:90%;--duration:7s;--delay:1.5s;--tail:85px"></span>
-
-    <span class="sleep-symbol"
-          style="--x:10%;--duration:6s;--delay:1s;--tail:60px"></span>
-
-    <span class="sleep-symbol"
-          style="--x:47%;--duration:7s;--delay:3s;--tail:70px"></span>
-
-    <span class="sleep-symbol"
-          style="--x:82%;--duration:5.5s;--delay:2s;--tail:55px"></span>
-</div>
-
-Result: dark SLEEPIN4LGNG interface + random falling 💤 symbols + white/violet meteor trails + fade-in background, habang nananatiling clickable ang page elements.
